@@ -14,6 +14,8 @@ public class TimerScript : MonoBehaviour
     public int playTime;
     [SerializeField, Header("制限時間の表示")]
     public TMP_Text playTimeText;
+    [SerializeField, Header("フェードマネージャー")]
+    FadeManager fadeManager;
 
     private int currentTime;              // 現在の残り時間（不要な場合は宣言しない）
     private float timer;                  // 時間計測用
@@ -34,20 +36,24 @@ public class TimerScript : MonoBehaviour
         {
             timer = 0;
             playTime--;  // あるいは、currentTime--;
+
+            if (playTime < 0)
+            {
+                //一応マイナス値いかないように
+                playTime = 0;
+                //強制でいかせる
+                SceneManager.LoadScene("FailedScene");
+            }
+
             // 時間表示を更新するメソッドを呼び出す
             DisplayPlayTime(playTime);   // あるいは、DisplayPlayTime(currentTime);
         }
 
         if (playTime <= 0)
         {
-            //ゲームオーバー処理
-            SceneManager.LoadScene("FailedScene");
-        }
-
-        if (playTime < 0)
-        {
-            //一応マイナス値いかないように
-            playTime = 0;
+            //ゲームオーバー処理 - フェードイン(アウト)
+            fadeManager.FadeIn("FailedScene");
+            //SceneManager.LoadScene("FailedScene");
         }
     }
 
