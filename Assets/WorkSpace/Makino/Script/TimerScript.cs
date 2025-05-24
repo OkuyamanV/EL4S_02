@@ -41,7 +41,7 @@ public class TimerScript : MonoBehaviour
         if (playTime <= 0)
         {
             //ゲームオーバー処理
-            SceneManager.LoadScene("testGameover");
+            SceneManager.LoadScene("FailedScene");
         }
 
         if (playTime < 0)
