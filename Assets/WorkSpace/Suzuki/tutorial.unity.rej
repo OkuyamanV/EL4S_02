@@ -1,0 +1,9 @@
+diff a/Assets/WorkSpace/Suzuki/tutorial.unity b/Assets/WorkSpace/Suzuki/tutorial.unity	(rejected hunks)
+@@ -8572,6 +8572,7 @@
+   - component: {fileID: 1927277418}
+   - component: {fileID: 1927277417}
+   - component: {fileID: 1927277416}
++  - component: {fileID: 1927277419}
+   m_Layer: 0
+   m_Name: Main Camera
+   m_TagString: MainCamera
