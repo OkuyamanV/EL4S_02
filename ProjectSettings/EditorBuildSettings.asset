@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameScene01.unity
     guid: 67e0d187457e656499bd1f4a21115712
-  - enabled: 1
+  - enabled: 0
     path: Assets/WorkSpace/Makino/Scene/testGameover.unity
     guid: 7b47d344d4817f747a99836ee3a84ded
   - enabled: 1
