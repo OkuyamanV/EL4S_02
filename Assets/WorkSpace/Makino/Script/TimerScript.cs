@@ -17,43 +17,40 @@ public class TimerScript : MonoBehaviour
     [SerializeField, Header("フェードマネージャー")]
     FadeManager fadeManager;
 
-    private int currentTime;              // 現在の残り時間（不要な場合は宣言しない）
-    private float timer;                  // 時間計測用
+    //時間計測用
+    private float timer;
 
     void Start()
     {
-        // currentTimeを利用する場合にはここで代入する。以下、必要に応じてplayTimeをcurrentTimeに書き換える
-        currentTime = playTime;
         DisplayPlayTime(playTime);
     }
 
     void Update()
     {
-        // timerを利用して経過時間を計測
+        //timerを利用して経過時間を計測
         timer += Time.deltaTime;
-        // 1秒経過ごとにtimerを0に戻し、playTime(currentTime)を減算する
+        //1秒経過ごとにtimerを0に戻し、playTime(currentTime)を減算する
         if (timer >= 1)
         {
             timer = 0;
-            playTime--;  // あるいは、currentTime--;
+            playTime--;
 
             if (playTime < 0)
             {
                 //一応マイナス値いかないように
                 playTime = 0;
-                //強制でいかせる
+                //強制シーン移動
                 SceneManager.LoadScene("FailedScene");
             }
 
-            // 時間表示を更新するメソッドを呼び出す
-            DisplayPlayTime(playTime);   // あるいは、DisplayPlayTime(currentTime);
+            //時間表示を更新するメソッドを呼び出す
+            DisplayPlayTime(playTime);
         }
 
         if (playTime <= 0)
         {
             //ゲームオーバー処理 - フェードイン(アウト)
             fadeManager.FadeIn("FailedScene");
-            //SceneManager.LoadScene("FailedScene");
         }
     }
 
@@ -62,8 +59,8 @@ public class TimerScript : MonoBehaviour
     /// </summary>
     private void DisplayPlayTime(int limitTime)
     {
-        // 引数で受け取った値を[分:秒]に変換して表示する
-        // ToString("00")でゼロプレースフォルダーして、１桁のときは頭に0をつける
+        //引数で受け取った値を[分:秒]に変換して表示する
+        //ToString("00")でゼロプレースフォルダーして、１桁のときは頭に0をつける
         playTimeText.text = ((int)(limitTime / 60)).ToString("00") + ":" + ((int)limitTime % 60).ToString("00");
     }
 }
