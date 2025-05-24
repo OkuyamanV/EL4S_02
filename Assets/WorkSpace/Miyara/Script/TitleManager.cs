@@ -29,6 +29,7 @@ public class TitleManager : MonoBehaviour
     private void Start()
     {
         uiSelect = UISelect.TitleUI;
+        audioManager.PlayAudio("BGM", true);
     }
 
     void Update()
