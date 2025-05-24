@@ -2,7 +2,8 @@
 // フェードシステム
 // 制作者；ミヤラ トシ
 // 更新内容
-// Add：　新規作成
+// Update   ：　フェードのアクティブ切るタイミング変更
+// Add      ：　新規作成
 //---------------------------------------------------
 using System.Collections;
 using System.Drawing;
@@ -68,11 +69,13 @@ public class FadeManager : MonoBehaviour
         }
         color.a = end;
         fadeImage.color = color;
-        fadeObject.SetActive(false);
 
         // シーン名が指定されていたらシーン遷移
         if (!string.IsNullOrEmpty(sceneName))
             SceneManager.LoadScene(sceneName);
+        else
+            fadeObject.SetActive(false);
+
     }
 
 }
