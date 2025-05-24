@@ -6,7 +6,7 @@ public class StartPoint : MonoBehaviour
 	CircuitManager _circuitManager;
 	Output _output;
 	[SerializeField] bool _startOutput;
-	Image _image;
+	Text _text;
 
 	private void Start()
 	{
@@ -14,9 +14,9 @@ public class StartPoint : MonoBehaviour
 		_output = GetComponent<Output>();
 		_output.SetOutput(_startOutput);
 
-		//テクスチャ変更
-		_image = GetComponent<Image>();
-		_image.sprite = _circuitManager.GetOutputTexture(_startOutput);
+		//テキスト変更
+		_text = GetComponentInChildren<Text>();
+		_text.text = (_startOutput) ? "1" : "0";
 	}
 
 }
