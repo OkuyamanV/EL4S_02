@@ -151,3 +151,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playTime: 60
   playTimeText: {fileID: 7453651424632280031}
+  fadeManager: {fileID: 266444202806798530, guid: e2524b12ca166194d905f544567a4ee5, type: 3}
