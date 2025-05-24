@@ -15,16 +15,17 @@ public class CircuitManager : MonoBehaviour
 		End
 	};
 
-	[SerializeField] Sprite[] _circuitTextures = new Sprite[(int)CircuitState.End];
-	[SerializeField] Sprite[] _outputTextures = new Sprite[2];
+	[SerializeField, EnumArray(typeof(CircuitState))] Sprite[] _circuitTextures = new Sprite[(int)CircuitState.End];
+	[SerializeField] string[] _outputStrings = new string[2];
 
-	[SerializeField] CircuitPoint[] _circuitPoints = new CircuitPoint[2];//手前にあるものから順に登録する
+	[SerializeField] CircuitPoint[] _circuitPoints = new CircuitPoint[0];//手前にあるものから順に登録する
 
 	bool _change;
 
 	private void Start()
 	{
 		_change = true;
+		SetStartTextures();
 	}
 
 	private void Update()
@@ -39,6 +40,14 @@ public class CircuitManager : MonoBehaviour
 		}
 	}
 
+	void SetStartTextures()
+	{
+		foreach (var circuit in _circuitPoints)
+		{
+			circuit.SetSprite();
+		}
+	}
+
 	//テクスチャ取得用
 	public Sprite GetCircuitTexture(CircuitState state)
 	{
@@ -46,11 +55,11 @@ public class CircuitManager : MonoBehaviour
 	}
 
 	//テクスチャ取得用
-	public Sprite GetOutputTexture(bool state)
+	public string GetOutputTexture(bool state)
 	{
 		int index = (state) ? 1 : 0;//true=1,false=0として変換
 
-		return _outputTextures[index];
+		return _outputStrings[index];
 	}
 
 	public bool Circuit(CircuitState state, bool input1, bool input2)
@@ -83,4 +92,6 @@ public class CircuitManager : MonoBehaviour
 		}
 
 	}
+
+	public void SetChange() { _change = true; }
 }

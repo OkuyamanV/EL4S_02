@@ -7,13 +7,15 @@ public class CircuitPoint : MonoBehaviour
 	Output _output;
 	[SerializeField] Output[] _input = new Output[2];
 	[SerializeField] CircuitManager.CircuitState[] _selectState = new CircuitManager.CircuitState[1];
-	[SerializeField] int _state;
+	int _state;
 
 	Button _button;
 
 	private void Start()
 	{
 		_circuitManager = FindAnyObjectByType<CircuitManager>();
+		_output = GetComponent<Output>();
+		Debug.Log(_circuitManager.name);
 		_button = GetComponent<Button>();
 
 		//ボタンクリック時の処理追加
@@ -38,12 +40,23 @@ public class CircuitPoint : MonoBehaviour
 			_state = 0;
 		}
 
-		//Sprite変更
-		Sprite sprite = _circuitManager.GetCircuitTexture(_selectState[_state]);
-		_button.image.sprite = sprite;
+		SetSprite();
 
 		//output変更
 		_output.SetOutput(_circuitManager.Circuit(_selectState[_state], _input[0].GetOutput(), _input[1].GetOutput()));
 
+		_circuitManager.SetChange();
+	}
+
+	public void SetSprite()
+	{
+		//Sprite変更
+		Sprite sprite = _circuitManager.GetCircuitTexture(_selectState[_state]);
+
+		if (_button == null)
+		{
+			_button = GetComponent<Button>();
+		}
+		_button.image.sprite = sprite;
 	}
 }
