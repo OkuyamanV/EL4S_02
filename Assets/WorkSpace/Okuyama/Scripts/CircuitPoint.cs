@@ -15,7 +15,6 @@ public class CircuitPoint : MonoBehaviour
 	{
 		_circuitManager = FindAnyObjectByType<CircuitManager>();
 		_output = GetComponent<Output>();
-		Debug.Log(_circuitManager.name);
 		_button = GetComponent<Button>();
 
 		//ボタンクリック時の処理追加
@@ -51,6 +50,11 @@ public class CircuitPoint : MonoBehaviour
 	public void SetSprite()
 	{
 		//Sprite変更
+		if (_circuitManager == null)
+		{
+			_circuitManager = FindAnyObjectByType<CircuitManager>();
+		}
+
 		Sprite sprite = _circuitManager.GetCircuitTexture(_selectState[_state]);
 
 		if (_button == null)

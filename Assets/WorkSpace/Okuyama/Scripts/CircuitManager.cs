@@ -80,7 +80,7 @@ public class CircuitManager : MonoBehaviour
 
 			case CircuitState.NOR:
 				return !(input1 || input2);
-
+				
 			case CircuitState.XOR:
 				return ((input1 && !input2) || (!input1 && input2));
 
