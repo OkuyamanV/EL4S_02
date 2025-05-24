@@ -149,5 +149,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f3d5e63c33d82d439be17f2bf82af1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playTime: 5
+  playTime: 60
   playTimeText: {fileID: 7453651424632280031}
