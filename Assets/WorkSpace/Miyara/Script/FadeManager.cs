@@ -35,9 +35,10 @@ public class FadeManager : MonoBehaviour
     public void FadeIn(string sceneName = "")
     {
         color = fadeImage.color;
+        fadeObject.SetActive(true);
 
         // シーン名が入力されているかどうか
-        if(string.IsNullOrEmpty(sceneName))
+        if (string.IsNullOrEmpty(sceneName))
             StartCoroutine(Fade(0, 1));
         else
             StartCoroutine(Fade(0, 1, sceneName));
@@ -46,6 +47,7 @@ public class FadeManager : MonoBehaviour
 
     public void FadeOut()
     {
+        fadeObject.SetActive(true);
         color = fadeImage.color;
         StartCoroutine(Fade(1, 0));
     }
@@ -66,6 +68,7 @@ public class FadeManager : MonoBehaviour
         }
         color.a = end;
         fadeImage.color = color;
+        fadeObject.SetActive(false);
 
         // シーン名が指定されていたらシーン遷移
         if (!string.IsNullOrEmpty(sceneName))
