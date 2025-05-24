@@ -61,11 +61,17 @@ public class TitleManager : MonoBehaviour
         audioManager.PlayAudio("Button");
         fadeManager.FadeIn("GameScene01");
     }
+    public void TutorialButton()
+    {
+        audioManager.PlayAudio("Button");
+        fadeManager.FadeIn("tutorial");
+    }
     public void BackButton()
     {
         audioManager.PlayAudio("Button");
         uiSelect = UISelect.TitleUI;  // タイトルUIに変更
     }
+
 
     #endregion
 }

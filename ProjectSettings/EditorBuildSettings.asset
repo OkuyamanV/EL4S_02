@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/WorkSpace/Ori/FailedScene.unity
     guid: 732cff01c87e64c40820d69c79aa30f1
+  - enabled: 1
+    path: Assets/WorkSpace/Suzuki/tutorial.unity
+    guid: ed1b82a9a41ecf4438f2593dcfb032cc
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
