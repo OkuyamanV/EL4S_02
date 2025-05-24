@@ -12,17 +12,20 @@ EditorBuildSettings:
     path: Assets/Scenes/TitleScene.unity
     guid: 5714a9b838da7ca4a8eb3ecf2b219be7
   - enabled: 1
+    path: Assets/WorkSpace/Suzuki/tutorial.unity
+    guid: ed1b82a9a41ecf4438f2593dcfb032cc
+  - enabled: 1
     path: Assets/Scenes/GameScene01.unity
     guid: 67e0d187457e656499bd1f4a21115712
-  - enabled: 0
-    path: Assets/WorkSpace/Makino/Scene/testGameover.unity
-    guid: 7b47d344d4817f747a99836ee3a84ded
+  - enabled: 1
+    path: Assets/Scenes/GameScene02.unity
+    guid: fb402fdfc98c9ed4c94289c24f71abd6
   - enabled: 1
     path: Assets/WorkSpace/Ori/FailedScene.unity
     guid: 732cff01c87e64c40820d69c79aa30f1
   - enabled: 1
-    path: Assets/WorkSpace/Suzuki/tutorial.unity
-    guid: ed1b82a9a41ecf4438f2593dcfb032cc
+    path: Assets/Scenes/ResultScene.unity
+    guid: c2686015f6cf2f645b59ca5e31b39b8a
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

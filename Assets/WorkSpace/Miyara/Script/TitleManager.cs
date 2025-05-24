@@ -61,6 +61,11 @@ public class TitleManager : MonoBehaviour
         audioManager.PlayAudio("Button");
         fadeManager.FadeIn("GameScene01");
     }
+    public void Stage02Button()
+    {
+        audioManager.PlayAudio("Button");
+        fadeManager.FadeIn("GameScene02");
+    }
     public void TutorialButton()
     {
         audioManager.PlayAudio("Button");

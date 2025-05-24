@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class AnswerButton : MonoBehaviour
 {
 	[SerializeField] GoalPoint _goalPoint;
-	[SerializeField] SceneAsset _sceneAsset;
+	[SerializeField] UnityEditor.SceneAsset _sceneAsset;
 
-	Button _button;
+    Button _button;
 
 	private void Start()
 	{
@@ -27,6 +27,6 @@ public class AnswerButton : MonoBehaviour
 		{
 			SceneManager.LoadScene(_sceneAsset.name);
 		}
-	}
+    }
 
 }
