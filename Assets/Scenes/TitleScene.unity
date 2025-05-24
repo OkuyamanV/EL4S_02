@@ -349,6 +349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeManager: {fileID: 638994109}
+  audioManager: {fileID: 638994113}
   titleUI: {fileID: 630643051}
   stageSelectUI: {fileID: 1203421864}
 --- !u!4 &638994111
@@ -475,11 +476,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e032103a359169749bb650a302c7c46d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgmList: []
+  bgmList:
+  - name: BGM
+    clip: {fileID: 8300000, guid: 16309c79541c24b42bf94e14969d7cee, type: 3}
+    volume: 1
   seList:
   - name: Button
     clip: {fileID: 8300000, guid: 4cfbac468572fd945a65c0ba83453722, type: 3}
     volume: 1
+  - name: Clear
+    clip: {fileID: 8300000, guid: 2c3d68f199d3e5c4eacf819bac8ec65c, type: 3}
+    volume: 0.5
+  - name: Fail
+    clip: {fileID: 8300000, guid: 89b6b9648b90d5242b28c5f9b3346558, type: 3}
+    volume: 0.5
 --- !u!1 &743736733
 GameObject:
   m_ObjectHideFlags: 0
@@ -1173,7 +1183,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 0.7490196}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1654,7 +1664,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 0.7490196}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1998,7 +2008,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 0.7490196}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -2267,7 +2277,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 0.7490196}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
