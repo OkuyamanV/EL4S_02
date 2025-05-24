@@ -7,15 +7,15 @@ public class GoalPoint : MonoBehaviour
 	[SerializeField] bool _target;
 	[SerializeField] Output _input;
 
-	Image _image;
+	Text _text;
 
 	private void Start()
 	{
 		_circuitManager = FindAnyObjectByType<CircuitManager>();
 
-		//テクスチャ変更
-		_image = GetComponent<Image>();
-		_image.sprite = _circuitManager.GetOutputTexture(_target);
+		//テキスト変更
+		_text = GetComponentInChildren<Text>();
+		_text.text = (_target) ? "1" : "0";
 	}
 
 	public bool Answer()

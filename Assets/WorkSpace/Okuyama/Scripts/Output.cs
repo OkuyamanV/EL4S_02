@@ -4,6 +4,7 @@ public class Output : MonoBehaviour
 {
 	bool _output = true;
 
+
 	//İ’è—p
 	public void SetOutput(bool output)
 	{
